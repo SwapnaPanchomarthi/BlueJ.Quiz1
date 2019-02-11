@@ -1,4 +1,4 @@
- 
+ import java.math.*;
 
 public class LoopFun
 {
@@ -10,7 +10,15 @@ public class LoopFun
        * @return the factorial of the number
        */
       public Integer factorial(Integer number){
-          return null;
+          
+            BigInteger fact= BigInteger.ONE;                 
+
+            for (int i = 2; i <= number; i++)
+               {
+                    fact = fact.multiply(new BigInteger(String.valueOf(i)));
+            }
+            number = fact.intValue();
+          return number;
       }
 
       /**
@@ -20,8 +28,9 @@ public class LoopFun
        * @param phrase
        * @return Upper case string of the first letter of each word
        */
-      public String acronym(String phrase) {
-          return null;
+      public String acronym(String phrase) {     
+           String result = phrase.replaceAll("\\B.|\\P{L}", "").toUpperCase();
+           return result.toString();
       }
 
       /**
